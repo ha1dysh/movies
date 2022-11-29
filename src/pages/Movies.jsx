@@ -24,8 +24,6 @@ export default function Movies() {
     getMovies(query).then(setMovies);
   }, [query]);
 
-  console.log(query);
-
   return (
     <div>
       <h1>Movies</h1>

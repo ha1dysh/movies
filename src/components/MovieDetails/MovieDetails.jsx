@@ -20,7 +20,7 @@ export default function MovieDetails() {
 
   return (
     <div>
-      <Link to={location.state.from}>Go back</Link>
+      <Link to={location.state?.from}>Go back</Link>
       {movie && (
         <div className="details">
           <div className="poster">
@@ -53,10 +53,14 @@ export default function MovieDetails() {
       <p>Additional information</p>
       <ul>
         <li>
-          <NavLink to="cast">Cast</NavLink>
+          <NavLink state={{ from: location.state?.from }} to="cast">
+            Cast
+          </NavLink>
         </li>
         <li>
-          <NavLink to="review">Review</NavLink>
+          <NavLink state={{ from: location.state?.from }} to="review">
+            Review
+          </NavLink>
         </li>
       </ul>
       <Outlet />

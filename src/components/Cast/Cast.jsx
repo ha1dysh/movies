@@ -4,7 +4,7 @@ import { getCast } from '../../services/API';
 import './Cast.css';
 
 export default function Cast() {
-  const [cast, setCast] = useState();
+  const [cast, setCast] = useState([]);
   const { movieId } = useParams();
 
   useEffect(() => {

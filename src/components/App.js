@@ -18,6 +18,7 @@ function App() {
             <Route path="cast" element={<Cast />} />
             <Route path="review" element={<Review />} />
           </Route>
+          <Route path="*" element={<Trends />} />
         </Route>
       </Routes>
     </div>
