@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import { getMovies } from '../services/API';
+import SearchForm from '../components/SearchForm/SearchForm';
 
 export default function Movies() {
   const [movies, setMovies] = useState([]);
@@ -25,24 +26,21 @@ export default function Movies() {
   }, [query]);
 
   return (
-    <div>
-      <h1>Movies</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          onChange={(e) => setSearchParams({ query: e.target.value })}
-        />
-        <input type="submit" value="Search" />
-      </form>
+    <>
+      <SearchForm
+        handleSubmit={handleSubmit}
+        setSearchParams={setSearchParams}
+      />
+
       <ul>
-        {movies.map((e) => (
-          <li key={e.id}>
-            <Link state={{ from: location }} to={`${e.id}`}>
-              {e.original_title}
+        {movies.map(({ id, original_title }) => (
+          <li key={id}>
+            <Link state={{ from: location }} to={`${id}`}>
+              {original_title}
             </Link>
           </li>
         ))}
       </ul>
-    </div>
+    </>
   );
 }

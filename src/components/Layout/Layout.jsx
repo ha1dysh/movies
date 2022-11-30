@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import './Layout.css';
 
@@ -15,7 +15,9 @@ export default function Layout() {
       </header>
 
       <main className="Main">
-        <Outlet />
+        <Suspense>
+          <Outlet />
+        </Suspense>
       </main>
     </>
   );

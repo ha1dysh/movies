@@ -14,18 +14,18 @@ export default function Cast() {
   return (
     <ul>
       {cast &&
-        cast.map((e) => (
-          <li key={e.id}>
-            {e.profile_path === null ? (
+        cast.map(({ id, profile_path, name, character }) => (
+          <li key={id}>
+            {profile_path === null ? (
               <div className="noImage">No image</div>
             ) : (
               <img
-                src={`https://www.themoviedb.org/t/p/w138_and_h175_face/${e.profile_path}`}
+                src={`https://www.themoviedb.org/t/p/w138_and_h175_face/${profile_path}`}
                 alt="img"
               />
             )}
-            <p>{e.name}</p>
-            <p>character: {e.character}</p>
+            <p>{name}</p>
+            <p>character: {character}</p>
           </li>
         ))}
     </ul>
