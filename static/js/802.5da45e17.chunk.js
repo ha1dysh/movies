@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_app=self.webpackChunkreact_app||[]).push([[802],{802:function(n,e,t){t.r(e),t.d(e,{default:function(){return s}});var u=t(885),r=t(791),c=t(689),a=t(635),i=t(184);function s(){var n=(0,r.useState)(),e=(0,u.Z)(n,2),t=e[0],s=e[1],f=(0,c.UO)().movieId;return(0,r.useEffect)((function(){(0,a.Tn)(f).then(s)}),[f]),(0,i.jsx)("ul",{children:t&&t.map((function(n){return(0,i.jsxs)("li",{children:[n.author,(0,i.jsx)("p",{children:n.content})]},n.id)}))})}}}]);
+//# sourceMappingURL=802.5da45e17.chunk.js.map
